@@ -1,0 +1,188 @@
+body {
+    background-image: url("images/background.png");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-color: #000;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+/* ヘッダー */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 24px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+/* ナビゲーション */
+.nav-links {
+    display: flex;
+    list-style: none;
+    padding: 0;
+}
+
+.nav-links li {
+    margin: 0 10px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    padding: 10px;
+}
+
+/* スマホサイズ */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.9);
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        text-align: center;
+        padding: 10px 0;
+    }
+}
+
+/* イベントとニュースリスト */
+#events-list, #news-list {
+    list-style: none;
+    padding: 0;
+    margin: 20px auto;
+    width: 80%;
+}
+
+/* リストの共通設定 */
+#events-list, #news-list {
+    list-style: none;
+    padding: 0;
+    margin: 20px auto;
+    width: 80%;
+}
+
+/* 共通の付箋風デザイン */
+.event-item, .news-item {
+    background: #fff9c4; /* 柔らかい黄色 */
+    color: black;
+    padding: 15px;
+    margin: 10px 0;
+    border-left: 10px solid #ffeb3b; /* 明るい黄色のアクセント */
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* 付箋らしい影 */
+    position: relative;
+
+    /* ふわっと出るアニメーション */
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s ease-out forwards;
+    
+    /* アニメーションをスムーズに */
+    transition: transform 0.3s ease-out;
+}
+
+/* ふわっと出るアニメーション */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.event-item h3, .news-item h3 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.event-item p, .news-item p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+/* イベントのカウントダウン（お知らせには不要） */
+.countdown {
+    font-weight: bold;
+    color: red;
+    margin-top: 5px;
+}
+
+/* ランキング表 */
+/* ランキング表のスタイル */
+table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background-color: rgba(0, 0, 0, 0.7); /* 半透明の黒 */
+    color: white;
+    text-align: center;
+}
+
+th, td {
+    border: 1px solid white;
+    padding: 10px;
+    font-size: 18px;
+}
+
+th {
+    background-color: rgba(50, 50, 50, 0.8); /* ヘッダーの色 */
+    font-weight: bold;
+}
+
+/* 偶数行の背景色を少し明るくする */
+tbody tr:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* ホバー時のスタイル */
+tbody tr:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* 1位～6位のカスタムスタイル */
+tbody tr:nth-child(1) { background-color: gold; color: black; font-weight: bold; }
+tbody tr:nth-child(2) { background-color: silver; color: black; font-weight: bold; }
+tbody tr:nth-child(3) { background-color: #cd7f32; color: black; font-weight: bold; }
+tbody tr:nth-child(4), 
+tbody tr:nth-child(5) { background-color: #8b5a2b; color: white; }
+tbody tr:nth-child(6),
+tbody tr:nth-child(n+7) { background-color: white; color: black; }
+
+#events-list, #finished-events-list {
+    padding: 0;
+    margin: 20px auto;
+    width: 80%;
+}
+
+#finished-events-list {
+    margin-top: 40px; /* 終了イベント一覧に少し余白を入れる */
+}
