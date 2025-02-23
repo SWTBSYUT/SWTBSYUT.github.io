@@ -1,0 +1,39 @@
+/* ランキング表 */
+table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    text-align: center;
+}
+
+th, td {
+    border: 1px solid white;
+    padding: 10px;
+    font-size: 18px;
+}
+
+th {
+    background-color: rgba(50, 50, 50, 0.8);
+    font-weight: bold;
+}
+
+/* 偶数行の背景色 */
+tbody tr:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* ホバー時のスタイル */
+tbody tr:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* ランキング順位の色（1～3位） */
+tbody tr:nth-child(1) { background-color: gold; color: black; font-weight: bold; }
+tbody tr:nth-child(2) { background-color: silver; color: black; font-weight: bold; }
+tbody tr:nth-child(3) { background-color: #cd7f32; color: black; font-weight: bold; }
+
+/* 4位～6位 */
+tbody tr:nth-child(4), tbody tr:nth-child(5) { background-color: #8b5a2b; color: white; }
+tbody tr:nth-child(n+6) { background-color: white; color: black; }

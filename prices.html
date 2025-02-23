@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ゆうクラ！ - 買取・販売価格表</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/prices.css">
+</head>
+<body>
+    <header>
+        <h1>ゆうクラ！ - 買取・販売価格表</h1>
+        <button class="menu-toggle">☰</button>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">ホーム</a></li>
+                <li><a href="rules.html">ルール</a></li>
+                <li><a href="ranking.html">ランキング</a></li>
+                <li><a href="events.html">イベント情報</a></li>
+                <li><a href="news.html">お知らせ</a></li>
+                <li><a href="prices.html">買取・販売価格</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>買取・販売価格表</h2>
+
+        <!-- 検索とフィルター -->
+        <input type="text" id="searchBox" placeholder="アイテム名を検索">
+        <select id="priceFilter">
+            <option value="all">すべての価格</option>
+            <option value="low">100M以下</option>
+            <option value="mid">100M〜500M</option>
+            <option value="high">500M以上</option>
+        </select>
+
+        <!-- スクロール可能な表 -->
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>アイテム名</th>
+                        <th>カテゴリ</th>
+                        <th>販売価格 (M)</th>
+                        <th>買取価格 (M)</th>
+                    </tr>
+                </thead>
+                <tbody id="itemTableBody">
+                    <!-- JavaScriptでデータを追加 -->
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+    <script src="items.js"></script>
+</body>
+</html>

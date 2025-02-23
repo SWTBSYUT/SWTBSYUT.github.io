@@ -1,0 +1,73 @@
+body {
+    background-image: url("../images/background.png");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-color: #000;
+    color: white;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+/* メインの余白調整（ナビゲーション固定のため） */
+main {
+    margin-top: 100px; /* 調整 */
+}
+
+h1 {
+    padding-top: 20px;
+}
+
+/* ナビゲーション */
+header {
+    height: 60px;
+    line-height: 60px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+.menu-toggle {
+    font-size: 24px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    z-index: 1100; /* クリックできるように */
+}
+
+/* ナビゲーションメニュー */
+.nav-links {
+    list-style: none; /* 修正 */
+    padding: 0;
+    margin: 0;
+    display: none; /* 初期状態は非表示 */
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 1000;
+}
+
+.nav-links.active {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.nav-links li {
+    padding: 15px 0;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+}

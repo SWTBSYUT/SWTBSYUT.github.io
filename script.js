@@ -73,9 +73,13 @@ document.addEventListener("DOMContentLoaded", function () {
         rankingTable.appendChild(row);
     });
 
-    // ハンバーガーメニューの開閉処理
     const menuToggle = document.querySelector(".menu-toggle");
     const navLinks = document.querySelector(".nav-links");
+
+    if (!menuToggle || !navLinks) {
+        console.error("要素が見つかりません！");
+        return;
+    }
 
     menuToggle.addEventListener("click", function () {
         navLinks.classList.toggle("active");
